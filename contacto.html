@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende y Conecta - Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            font-size: 2em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        .contact-section p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ponte en contacto</h1>
+    </header>
+    
+    <nav class="buttons">
+        <a href="index.html">Inicio</a>
+        <a href="talleres.html">Talleres</a>
+        <a href="aliados.html">Aliados</a>
+        <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+
+    <div class="contact-section">
+        <h2>Contáctanos</h2>
+        <div>
+            <p><strong>Escríbenos:</strong> <a href="mailto:Aprende_conecta@gmail.com">Aprende_conecta@gmail.com</a></p>
+            <p><strong>Llámanos:</strong> 952537998</p>
+        </div>
+        <form id="contactForm" onsubmit="enviarFormulario(event)">
+            <div>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+            </div>
+            <div>
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br>
+            </div>
+            <div>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="mensajeExito" style="display:none; margin-top:20px; color:green;">
+            ¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo pronto.
+        </div>
+    </div>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
+            // Aquí podrías agregar cualquier lógica para enviar datos al backend
+    
+            // Mostrar mensaje de éxito
+            document.getElementById("mensajeExito").style.display = "block";
+    
+            // Reiniciar el formulario si es necesario
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Aprende y Conecta. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
